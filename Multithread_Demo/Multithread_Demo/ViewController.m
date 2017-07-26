@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSThread_VC.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(20, 80, 100, 30);
+    btn.backgroundColor = [UIColor blueColor];
+    [btn setTitle:@"NSThread" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(clickNSThread) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
+- (void)clickNSThread
+{
+    [self presentViewController:[NSThread_VC new] animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
