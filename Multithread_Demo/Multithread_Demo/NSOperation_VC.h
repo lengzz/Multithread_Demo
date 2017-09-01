@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  NSOperation是基于GCD封装的
+ *  其中，NSOperation相当于GCD中的任务
+ *  而NSOperationQueue则相当于GCD中的队列
+ *  但是比GCD更简单易用、代码可读性也更高
+ */
+
 @interface NSOperation_VC : UIViewController
 
 @end
